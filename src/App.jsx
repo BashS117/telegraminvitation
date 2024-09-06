@@ -48,9 +48,8 @@ alert('no puedes usar geo')
     <h1 className='text-[18px] text-[#363b40]'>Telegram</h1>
     </div>
     <button 
-     onClick={()=>handleClick()}
-    className='bg-[#2481cc] text-white font-bold text-[13px] rounded-[18px] px-[16px] py-[8px]'>
-    DOWNLOAD
+    className='bg-[#2481cc]  font-bold text-[13px] rounded-[18px] px-[16px] py-[8px]'>
+    <a className='text-white' href="https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=es_CO">DOWNLOAD</a>
     </button>
   </header>
   <figure className='relative m-0'>

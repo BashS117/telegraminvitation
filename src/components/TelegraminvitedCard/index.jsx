@@ -1,17 +1,18 @@
 import React from 'react';
+import userImage from '../../assets/userImage.jpg'
 
 
 function TelegramInviteCard(props) {
   
   return (
     <div className="bg-white mt-4  shadow-lg rounded-[14px] p-6 w-[334px] mx-auto text-center">
-      <div className="mb-4">
+      <figure className="mb-4 ">
         <img 
-          src="https://via.placeholder.com/100" 
+          src={userImage} 
           alt="Profile" 
-          className="w-34 h-34 rounded-full mx-auto"
+          className="w-[118px] h-[118px] object-cover rounded-full mx-auto"
         />
-      </div>
+      </figure>
       <h2 className="text-[22px] text-[#000000] font-bold mb-1">Lore-catty</h2>
       <p className="text-[#7d7f81] text-sm mb-4">368 subscribers</p>
       <p className="text-[#000000] mb-4">Solo gente 😈😉</p>
