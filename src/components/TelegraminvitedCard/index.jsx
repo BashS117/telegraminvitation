@@ -14,7 +14,7 @@ function TelegramInviteCard(props) {
         />
       </figure>
       <h2 className="text-[22px] text-[#000000] font-bold mb-1">Lore-catty</h2>
-      <p className="text-[#7d7f81] text-sm mb-4">368 subscribers</p>
+      <p className="text-[#7d7f81] text-sm mb-4">268 subscribers</p>
       <p className="text-[#000000] mb-4">Solo gente 😈😉</p>
       <div className="space-y-2 mt-6">
       <button
@@ -28,7 +28,7 @@ function TelegramInviteCard(props) {
         </button> */}
       </div>
       <p className="text-[#7d7f81] text-xs mt-4">
-        You are invited to the channel Lore-catty. Click above to join.
+        You are invited to the channel <strong>Lore-catty</strong>. Click above to join.
       </p>
     </div>
   );

